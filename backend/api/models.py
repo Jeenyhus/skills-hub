@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Location Model
 class Location(models.Model):
@@ -20,7 +21,11 @@ class Trainee(models.Model):
 # Score Model
 class Score(models.Model):
     trainee = models.ForeignKey(Trainee, on_delete=models.CASCADE)
-    attendance = models.DecimalField(max_digits=4, decimal_places=2)  # Out of 5
+    attendance = models.DecimalField(
+        max_digits=4, 
+        decimal_places=2,
+        validators=[MinValueValidator(0), MaxValueValidator(5)]
+    )  # Out of 5
     punctuality = models.DecimalField(max_digits=4, decimal_places=2)  # Out of 5
     energy = models.DecimalField(max_digits=4, decimal_places=2)  # Out of 3
     reliability = models.DecimalField(max_digits=4, decimal_places=2)  # Out of 3
@@ -29,6 +34,10 @@ class Score(models.Model):
     numeracy_progress = models.DecimalField(max_digits=5, decimal_places=2)  # Out of 10
     total_score = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     grade = models.CharField(max_length=2, blank=True, null=True)  # e.g., "A+"
+    
+    # Add timestamp fields
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def calculate_total_and_grade(self):
         # Calculate the total and grade

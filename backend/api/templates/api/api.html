@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto py-10 px-6">
+    <!-- Header Section -->
+    <div class="bg-white p-6 rounded-lg shadow mb-8">
+        <h1 class="text-3xl font-bold text-gray-800">API Documentation</h1>
+        <p class="text-gray-600 mt-2">
+            Base URL: 
+            <code class="bg-gray-100 text-gray-800 px-2 py-1 rounded">
+                http://127.0.0.1:8000/
+            </code>
+        </p>
+    </div>
+
+    <!-- Location API Section -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Location API</h2>
+        <p class="text-gray-600 mb-6">
+            Manage location data including retrieving, viewing, and editing locations.
+        </p>
+        <table class="table-auto w-full text-left border-collapse">
+            <thead>
+                <tr class="bg-gray-100">
+                    <th class="px-4 py-2 text-sm font-semibold text-gray-800">Endpoint</th>
+                    <th class="px-4 py-2 text-sm font-semibold text-gray-800">Method</th>
+                    <th class="px-4 py-2 text-sm font-semibold text-gray-800">Description</th>
+                    <th class="px-4 py-2 text-sm font-semibold text-gray-800">Status Codes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-t">
+                    <td class="px-4 py-2 text-sm text-gray-800">/api/locations/</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">GET</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">Retrieve all location instances.</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">
+                        <span class="font-semibold text-green-600">200</span>: Success<br>
+                        <span class="font-semibold text-red-600">500</span>: Server Error
+                    </td>
+                </tr>
+                <tr class="border-t">
+                    <td class="px-4 py-2 text-sm text-gray-800">/api/locations/{id}/</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">GET</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">Retrieve a specific location by ID.</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">
+                        <span class="font-semibold text-green-600">200</span>: Success<br>
+                        <span class="font-semibold text-red-600">404</span>: Not Found<br>
+                        <span class="font-semibold text-red-600">500</span>: Server Error
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Trainee API Section -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Trainee API</h2>
+        <p class="text-gray-600 mb-6">
+            Manage trainee data including retrieving, viewing, and editing trainee details.
+        </p>
+        <table class="table-auto w-full text-left border-collapse">
+            <thead>
+                <tr class="bg-gray-100">
+                    <th class="px-4 py-2 text-sm font-semibold text-gray-800">Endpoint</th>
+                    <th class="px-4 py-2 text-sm font-semibold text-gray-800">Method</th>
+                    <th class="px-4 py-2 text-sm font-semibold text-gray-800">Description</th>
+                    <th class="px-4 py-2 text-sm font-semibold text-gray-800">Status Codes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-t">
+                    <td class="px-4 py-2 text-sm text-gray-800">/api/trainees/</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">GET</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">Retrieve all trainee instances.</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">
+                        <span class="font-semibold text-green-600">200</span>: Success<br>
+                        <span class="font-semibold text-red-600">500</span>: Server Error
+                    </td>
+                </tr>
+                <tr class="border-t">
+                    <td class="px-4 py-2 text-sm text-gray-800">/api/trainees/{id}/</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">GET</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">Retrieve a specific trainee by ID.</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">
+                        <span class="font-semibold text-green-600">200</span>: Success<br>
+                        <span class="font-semibold text-red-600">404</span>: Not Found<br>
+                        <span class="font-semibold text-red-600">500</span>: Server Error
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Score API Section -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Score API</h2>
+        <p class="text-gray-600 mb-6">
+            Manage trainee scores with filtering and ordering capabilities.
+        </p>
+        <table class="table-auto w-full text-left border-collapse">
+            <thead>
+                <tr class="bg-gray-100">
+                    <th class="px-4 py-2 text-sm font-semibold text-gray-800">Endpoint</th>
+                    <th class="px-4 py-2 text-sm font-semibold text-gray-800">Method</th>
+                    <th class="px-4 py-2 text-sm font-semibold text-gray-800">Description</th>
+                    <th class="px-4 py-2 text-sm font-semibold text-gray-800">Status Codes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-t">
+                    <td class="px-4 py-2 text-sm text-gray-800">/api/scores/</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">GET</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">Retrieve all score instances.</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">
+                        <span class="font-semibold text-green-600">200</span>: Success<br>
+                        <span class="font-semibold text-red-600">500</span>: Server Error
+                    </td>
+                </tr>
+                <tr class="border-t">
+                    <td class="px-4 py-2 text-sm text-gray-800">/api/scores/{id}/</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">GET</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">Retrieve a specific score by ID.</td>
+                    <td class="px-4 py-2 text-sm text-gray-800">
+                        <span class="font-semibold text-green-600">200</span>: Success<br>
+                        <span class="font-semibold text-red-600">404</span>: Not Found<br>
+                        <span class="font-semibold text-red-600">500</span>: Server Error
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+{% endblock %}

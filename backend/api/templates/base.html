@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Skills Hub API{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .endpoint-card {
+            margin-bottom: 20px;
+        }
+        .method-badge {
+            margin-right: 5px;
+        }
+        .get { background-color: #61affe; }
+        .post { background-color: #49cc90; }
+        .put { background-color: #fca130; }
+        .delete { background-color: #f93e3e; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto">
+            <a class="text-white text-lg font-semibold" href="/">Skills Hub API Documentation</a>
+        </div>
+    </nav>
+    <div class="container mx-auto mt-8">
+        {% block content %}{% endblock %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+</body>
+</html>
